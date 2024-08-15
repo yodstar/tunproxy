@@ -1,0 +1,12 @@
+[Unit]
+Description=Tunnel Proxy Service
+After=network.target
+
+[Service]
+Type=simple
+LimitNOFILE=1024000
+ExecStart=/usr/local/tunproxy/tunproxy
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

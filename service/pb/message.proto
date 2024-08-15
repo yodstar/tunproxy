@@ -1,0 +1,9 @@
+syntax = "proto3";
+option go_package = "github.com/yodstar/tunproxy/service/pb";
+
+message Message {
+    int64 MsgId = 1;
+    string DstAddr = 2;
+    string SrcAddr = 3;
+    bytes Content = 4;
+}

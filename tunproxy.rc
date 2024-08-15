@@ -1,0 +1,38 @@
+#define GO_VERSION_INFO 1
+#define RT_MANIFEST 24
+
+#include "version.h"
+
+#define MAKEVER_S(a,b,c,d) a,b,c,d
+#define MAKEVER(a,b,c,d) a.b.c.d
+#define STRINGIFY(x) #x
+#define TOSTRING(x) STRINGIFY(x)
+
+GO_VERSION_INFO VERSIONINFO
+PRODUCTVERSION MAKEVER_S(VER_MAJOR, VER_MINOR, VER_PATCH, VER_REVISION)
+FILEVERSION MAKEVER_S(VER_MAJOR, VER_MINOR, VER_PATCH, VER_REVISION)
+
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+			VALUE "InternalName", "Tunnel Proxy Service"
+			VALUE "FileDescription", "Tunnel Proxy Service"
+			VALUE "CompanyName", ""
+			VALUE "ProductName", "Tunnel Proxy Service"
+			VALUE "LegalCopyright", "Copyright (C) 2020"
+			VALUE "FileVersion", TOSTRING(MAKEVER(VER_MAJOR, VER_MINOR, VER_PATCH, VER_REVISION))
+			VALUE "ProductVersion", TOSTRING(MAKEVER(VER_MAJOR, VER_MINOR, VER_PATCH, VER_REVISION))
+			VALUE "OriginalFilename", "tunproxy.exe"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+            VALUE "Translation", 0x0409, 0x04B0
+    END
+END
+
+GO_VERSION_INFO ICON "tunproxy.ico"
+
+GO_VERSION_INFO RT_MANIFEST "tunproxy.manifest"
